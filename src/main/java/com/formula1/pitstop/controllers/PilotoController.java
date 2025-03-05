@@ -1,15 +1,12 @@
 package com.formula1.pitstop.controllers;
-
-import com.formula1.pitstop.entities.Equipo;
 import com.formula1.pitstop.entities.Piloto;
 import com.formula1.pitstop.services.PilotoService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/pilotos")

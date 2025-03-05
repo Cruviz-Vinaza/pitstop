@@ -1,21 +1,17 @@
 package com.formula1.pitstop.services;
-
-import com.formula1.pitstop.entities.Coche;
-import com.formula1.pitstop.entities.Equipo;
 import com.formula1.pitstop.entities.Piloto;
 import com.formula1.pitstop.repositories.PilotoRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class PilotoService {
     private PilotoRepository pilotoRepository;
 
+    @Autowired
     public PilotoService(PilotoRepository pilotoRepository){
         this.pilotoRepository = pilotoRepository;
     }
@@ -28,7 +24,7 @@ public class PilotoService {
     // Obtener un piloto por su ID
     public Piloto getPilotoById(Long id) {
         return pilotoRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Equipo no encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Piloto no encontrado"));
     }
 
     //Crear piloto
